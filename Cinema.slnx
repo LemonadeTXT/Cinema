@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Cinema.DAL/Cinema.DAL.csproj" Id="6180e27a-4059-48a2-aef1-b207f10df015" />
+  <Project Path="Cinema.Dependencies/Cinema.Dependencies.csproj" Id="7b7753e8-0f91-4a58-9329-2d0a644c50e6" />
+  <Project Path="Cinema.Domain/Cinema.Domain.csproj" Id="82bd1175-6985-4671-a45d-9525336fcfd8" />
+  <Project Path="Cinema.Mapper/Cinema.Mapper.csproj" Id="17c5be37-4793-41df-b3db-8935f810d641" />
+  <Project Path="Cinema/Cinema.csproj" />
+</Solution>
