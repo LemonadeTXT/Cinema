@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Cinema.Application/Cinema.Application.csproj" Id="016f0a64-dc13-4d2f-b598-7cd16b9fad6f" />
+  <Project Path="Cinema.Common/Cinema.Common.csproj" Id="7aa5c956-5931-4fa7-98aa-3ca45673b720" />
   <Project Path="Cinema.DAL/Cinema.DAL.csproj" Id="6180e27a-4059-48a2-aef1-b207f10df015" />
   <Project Path="Cinema.Dependencies/Cinema.Dependencies.csproj" Id="7b7753e8-0f91-4a58-9329-2d0a644c50e6" />
   <Project Path="Cinema.Domain/Cinema.Domain.csproj" Id="82bd1175-6985-4671-a45d-9525336fcfd8" />

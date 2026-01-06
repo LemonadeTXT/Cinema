@@ -15,6 +15,8 @@ namespace Cinema
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            builder.Services.AddIServices();
+            builder.Services.AddIRepositories();
             builder.Services.AddIMapper();
 
             builder.Services.AddControllers();
