@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cinema.Application\Cinema.Application.csproj" />
-    <ProjectReference Include="..\Cinema.DAL\Cinema.DAL.csproj" />
     <ProjectReference Include="..\Cinema.Mapper\Cinema.Mapper.csproj" />
   </ItemGroup>
 

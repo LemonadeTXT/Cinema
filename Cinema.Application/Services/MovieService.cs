@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Cinema.Application.Interfaces;
+using Cinema.Application.Interfaces.Repositories;
+using Cinema.Application.Interfaces.Services;
 using Cinema.Common.DTOs;
 using Cinema.Common.Request;
-using Cinema.DAL.Interfaces;
 using Cinema.Domain.Models;
 
 namespace Cinema.Application.Services
@@ -44,9 +44,9 @@ namespace Cinema.Application.Services
             return await _movieRepository.Update(id, movie);
         }
 
-        public async void Delete(Guid id)
+        public async Task Delete(Guid id)
         {
-            _movieRepository.Delete(id);
+            await _movieRepository.Delete(id);
         }
     }
 }

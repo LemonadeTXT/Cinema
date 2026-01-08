@@ -1,6 +1,6 @@
 ﻿using Cinema.Domain.Models;
 
-namespace Cinema.DAL.Interfaces
+namespace Cinema.Application.Interfaces.Repositories
 {
     public interface IMovieRepository
     {
@@ -8,6 +8,6 @@ namespace Cinema.DAL.Interfaces
         Task<List<Movie>> GetAll();
         Task<Guid> Create(Movie movie);
         Task<Guid> Update(Guid id, Movie movie);
-        void Delete(Guid id);
+        Task Delete(Guid id);
     }
 }

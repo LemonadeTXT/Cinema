@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Cinema.Common.DTOs;
 using Cinema.Common.Request;
+using Cinema.Common.Response;
 using Cinema.DAL.Entities;
 using Cinema.Domain.Models;
 
@@ -10,12 +11,15 @@ namespace Cinema.Mapper
     {
         public MapperProfile()
         {
-            CreateMap<MovieEntity, Movie>().ReverseMap();
-            CreateMap<TicketEntity, Ticket>().ReverseMap();
-            CreateMap<UserEntity, User>().ReverseMap();
+            CreateMap<Movie, MovieEntity>().ReverseMap();
+            CreateMap<Ticket, TicketEntity>().ReverseMap();
+            CreateMap<User, UserEntity>().ReverseMap();
 
             CreateMap<Movie, MovieResponse>().ReverseMap();
             CreateMap<Movie, MovieRequest>().ReverseMap();
+
+            CreateMap<User, UserResponse>().ReverseMap();
+            CreateMap<User, UserRequest>().ReverseMap();
         }
     }
 }

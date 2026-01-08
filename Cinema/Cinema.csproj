@@ -16,16 +16,13 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.0" />
-	<Content Update="@(Content)">
-		<Visible Condition="'%(NuGetItemType)' == 'Content'">false</Visible>
-	</Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Cinema.Application\Cinema.Application.csproj" />
     <ProjectReference Include="..\Cinema.Common\Cinema.Common.csproj" />
     <ProjectReference Include="..\Cinema.DAL\Cinema.DAL.csproj" />
     <ProjectReference Include="..\Cinema.Dependencies\Cinema.Dependencies.csproj" />
+	<Content Update="@(Content)">
+		<Visible Condition="'%(NuGetItemType)' == 'Content'">false</Visible>
+	</Content>
   </ItemGroup>
 
 </Project>

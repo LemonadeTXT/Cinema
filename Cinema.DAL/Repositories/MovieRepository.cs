@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Cinema.Application.Interfaces.Repositories;
 using Cinema.DAL.Entities;
-using Cinema.DAL.Interfaces;
 using Cinema.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,14 +19,18 @@ namespace Cinema.DAL.Repositories
 
         public async Task<Movie> Get(Guid id)
         {
-            var movieEntity = await _applicationContext.Movies.FirstOrDefaultAsync(m => m.Id == id);
+            var movieEntity = await _applicationContext.Movies
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             return _mapper.Map<Movie>(movieEntity);
         }
 
         public async Task<List<Movie>> GetAll()
         {
-            var movieEntities = await _applicationContext.Movies.AsNoTracking().ToListAsync();
+            var movieEntities = await _applicationContext.Movies
+                .AsNoTracking()
+                .ToListAsync();
 
             return _mapper.Map<List<Movie>>(movieEntities);
         }
@@ -55,7 +59,7 @@ namespace Cinema.DAL.Repositories
             return movie.Id;
         }
 
-        public async void Delete(Guid id)
+        public async Task Delete(Guid id)
         {
             await _applicationContext.Movies
                 .Where(m => m.Id == id)

@@ -1,4 +1,4 @@
-﻿using Cinema.DAL.Interfaces;
+﻿using Cinema.Application.Interfaces.Repositories;
 
 namespace Cinema.DAL.Repositories
 {

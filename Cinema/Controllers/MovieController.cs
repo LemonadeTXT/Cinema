@@ -1,4 +1,4 @@
-﻿using Cinema.Application.Interfaces;
+﻿using Cinema.Application.Interfaces.Services;
 using Cinema.Common.DTOs;
 using Cinema.Common.Request;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +43,7 @@ namespace Cinema.Controllers
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<Guid>> Delete(Guid id)
         {
-            _movieService.Delete(id);
+            await _movieService.Delete(id);
 
             return Ok();
         }

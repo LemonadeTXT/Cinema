@@ -2,7 +2,7 @@
 using Cinema.Common.Request;
 using Cinema.Domain.Models;
 
-namespace Cinema.Application.Interfaces
+namespace Cinema.Application.Interfaces.Services
 {
     public interface IMovieService
     {
@@ -10,6 +10,6 @@ namespace Cinema.Application.Interfaces
         Task<List<MovieResponse>> GetAll();
         Task<Guid> Create(MovieRequest movieRequest);
         Task<Guid> Update(Guid id, MovieRequest movieRequest);
-        void Delete(Guid id);
+        Task Delete(Guid id);
     }
 }

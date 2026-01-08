@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Cinema.Application.Interfaces;
+using Cinema.Application.Interfaces.Repositories;
+using Cinema.Application.Interfaces.Services;
 using Cinema.Application.Services;
-using Cinema.DAL.Interfaces;
 using Cinema.DAL.Repositories;
 using Cinema.Mapper;
 using Microsoft.Extensions.DependencyInjection;

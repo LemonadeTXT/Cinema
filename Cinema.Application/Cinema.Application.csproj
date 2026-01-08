@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Cinema.Common\Cinema.Common.csproj" />
-    <ProjectReference Include="..\Cinema.DAL\Cinema.DAL.csproj" />
+    <ProjectReference Include="..\Cinema.Domain\Cinema.Domain.csproj" />
   </ItemGroup>
 
 </Project>
