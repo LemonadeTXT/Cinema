@@ -1,5 +1,7 @@
 using Cinema.DAL;
 using Cinema.Dependencies;
+using Cinema.Infrastructure;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cinema
@@ -10,11 +12,16 @@ namespace Cinema
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(nameof(JwtOptions)));
+
             builder.Services.AddDbContext<ApplicationContext>(options => 
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            builder.Services.AddApiAuthentication(builder.Configuration);
+
+            builder.Services.AddIAuth();
             builder.Services.AddIServices();
             builder.Services.AddIRepositories();
             builder.Services.AddIMapper();
@@ -34,8 +41,15 @@ namespace Cinema
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseCookiePolicy(new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Strict,
+                HttpOnly = HttpOnlyPolicy.Always,
+                Secure = CookieSecurePolicy.Always
+            });
 
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllers();
 

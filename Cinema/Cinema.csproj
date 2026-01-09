@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Cinema.Common\Cinema.Common.csproj" />
     <ProjectReference Include="..\Cinema.DAL\Cinema.DAL.csproj" />
     <ProjectReference Include="..\Cinema.Dependencies\Cinema.Dependencies.csproj" />
+    <ProjectReference Include="..\Cinema.Infrastructure\Cinema.Infrastructure.csproj" />
 	<Content Update="@(Content)">
 		<Visible Condition="'%(NuGetItemType)' == 'Content'">false</Visible>
 	</Content>

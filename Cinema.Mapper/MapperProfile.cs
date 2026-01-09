@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Cinema.Common.Auth;
 using Cinema.Common.DTOs;
 using Cinema.Common.Request;
 using Cinema.Common.Response;
@@ -18,6 +19,7 @@ namespace Cinema.Mapper
             CreateMap<Movie, MovieResponse>().ReverseMap();
             CreateMap<Movie, MovieRequest>().ReverseMap();
 
+            CreateMap<User, AuthUser>().ReverseMap();
             CreateMap<User, UserResponse>().ReverseMap();
             CreateMap<User, UserRequest>().ReverseMap();
         }

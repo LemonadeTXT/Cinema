@@ -1,6 +1,7 @@
 ﻿using Cinema.Application.Interfaces.Services;
 using Cinema.Common.DTOs;
 using Cinema.Common.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinema.Controllers
@@ -17,6 +18,7 @@ namespace Cinema.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<MovieResponse>>> GetAll()
         {
             var movies = await _movieService.GetAll();
